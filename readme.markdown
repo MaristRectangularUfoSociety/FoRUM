@@ -1,6 +1,6 @@
 Forum Of Rectangular Ufo Messages
 =============================
 
-> A recursive name for an amazing forum.
->
-> Created by the Marist Rectangular Ufo Society
+* An amazing forum with a recursive name, like PHP!
+
+Created by the Marist Rectangular Ufo Society
