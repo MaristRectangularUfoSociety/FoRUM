@@ -10,28 +10,50 @@
     "image/vnd.microsoft.icon">
 
 	<style type="text/css">
-		body { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: 300; font-size: 1em; background: #a3a3a3; }
-		a { text-decoration: none; color: #4cc8f5; }
-		a:hover { color: #3b64eb; }
-		ul li { display: inline; padding-right: 25px; }
-		ul li:first-child { margin-left: -30px; }
-		h1, h2, h3, h4, h5, h6 {
-			font-family: "Georgia", "Times New Roman", serif;
+		body { 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: 300; font-size: 1em;
+			background: #eeeeee; /* Old browsers */
+			background: -moz-linear-gradient(-45deg,  #eeeeee 0%, #cccccc 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(-45deg,  #eeeeee 0%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(-45deg,  #eeeeee 0%,#cccccc 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(-45deg,  #eeeeee 0%,#cccccc 100%); /* IE10+ */
+			background: linear-gradient(135deg,  #eeeeee 0%,#cccccc 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */   
+		     }
+		a { text-decoration: none; color: #4cc8f5;}
+		a:hover { color: #3b64eb;}
+		ul li { display: inline; padding-right: 25px;}
+		ul li:first-child { margin-left: -30px;}
+		h1 {
+		    font-family: "Georgia", "Times New Roman", serif;
+		    font-weight: normal;
+		    margin-bottom: 0px;
+		    display: inline;}
+		}
+		h2, h3, h4, h5, h6 {
 			font-weight: normal;
 			margin-bottom: 0px;
-			display: inline; }
-		input { width: 80px; margin-right: 2.5px; }
-		header { overflow: hidden; width: inherit; height: 6.5%; margin-top: 30px; }
-		.container { margin: 0 auto; width: 800px; height: 800px; background: #f0f0f0; }
-		.content, footer { margin-left: 10px; }
-		.left-head { float: left; width: 70%; }
-		.right-head { float: right; width: 30%; margin-top: 26px; }
+			display: inline;}
+		input { width: 80px; margin-right: 2.5px;}
+		header { overflow: hidden; width: inherit; height: 6.5%; margin-top: 30px;}
+		footer { font-size: 12px;}
+		.container { margin: 0 auto; width: 800px; height: 1000px; overflow: hidden;}
+		.content, footer { margin-left: 10px; margin-top: 0px; clear: both;}
+		.post { height: 200px; overflow: hidden; margin-left: 10px;}
+		.postTitle { margin-bottom: 0px;}
+		dateAuthor { color: #626464; font-size: 12px;}
+		.left { float: left; width: 525px; margin-right: 25px;}
+		.column.left { margin-top: -20px;}
+		.login { margin-top: 26px;}
+		.right { float: left; width: 250px;}
+		.column.right { text-align: center;}
+		.thread { font-size: 13px; }
 	</style>
 </head>
 <body>
 	<div class="container">
 		<header>
-			<span class="left-head">
+			<span class="left">
 				<ul>
 					<li><h1><a href="index.html">FoRUM</a></h1></li>
 					<li><a href="index.html">News</a></li>
@@ -41,8 +63,8 @@
 					<li><a href="#">Help</a></li>
 				</ul>
 			</span>
-			<span class="right-head">
-				<input type="text" placeholder="Username"></input>
+			<span class="right login">
+				<input type="text" placeholder="username"></input>
 				<input type="password" placeholder="password"></input>
 				<button>Log In</button>
 			</span>
@@ -50,13 +72,42 @@
 		
 		<hr>
 		
-		<div class="content">
-			CONTENT
-		</div>
-		
-		<hr>
+		<span class="content">
+			<span class="left column">
+			    <span class="post">
+				<h2 class="postTitle"><a href="#">Second Update!</a></h2>
+				<dateAuthor>2013.04.05 - 2:11pm - Nicholas La Roux</dateAuthor><br>
+				This site doesn't look very nice with just one embedded stylesheet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et libero dolor. Nunc eget eleifend erat. Duis quis lacus a enim dignissim varius. Curabitur sed ipsum turpis, non dignissim purus. Phasellus et purus libero. Proin et urna quis tellus iaculis malesuada. Nunc id sollicitudin tortor. Morbi eleifend varius metus at eleifend. Donec dapibus diam et eros condimentum vel elementum dui rutrum. Nulla porta sem sit amet nulla ultrices varius. Vivamus bibendum, urna ac auctor suscipit, nisl nulla tincidunt velit, vitae cursus eros velit ut orci. Curabitur vel pharetra neque. Aenean vel sagittis dolor. Nunc posuere tellus pellentesque est vestibulum vitae convallis enim consectetur. 
+			    </span>
+			    <span class="post">
+				<h2 class="postTitle"><a href="#">Initial Commit</a></h2>
+				<dateAuthor>2013.04.02 - 2:11pm - Nicholas La Roux</dateAuthor><br>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et libero dolor. Nunc eget eleifend erat. Duis quis lacus a enim dignissim varius. Curabitur sed ipsum turpis, non dignissim purus. Phasellus et purus libero. Proin et urna quis tellus iaculis malesuada. Nunc id sollicitudin tortor. Morbi eleifend varius metus at eleifend. Donec dapibus diam et eros condimentum vel elementum dui rutrum. Nulla porta sem sit amet nulla ultrices varius. Vivamus bibendum, urna ac auctor suscipit, nisl nulla tincidunt velit, vitae cursus eros velit ut orci. Curabitur vel pharetra neque. Aenean vel sagittis dolor. Nunc posuere tellus pellentesque est vestibulum vitae convallis enim consectetur. 
+			    </span>
+			</span>
+			<span class="right column">
+			    <h3 class="postTitle">Popular Threads</h3>
+			    <span class="thread">
+				<h3 class="postTitle"><a href="#">How to use Drupal</a></h3>
+				<dateAuthor>Last Reply: 2013.04.05<br>3:01 pm - Jabba The Hut</dateAuthor><br>
+				Most recent post content... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in tellus sem. Mauris convallis dui in urna pellentesque ut varius.
+			    </span>
+			    <span class="thread">
+				<h3 class="postTitle"><a href="#">JavaScript Noob Here</a></h3>
+				<dateAuthor>Last Reply: 2013.04.03<br>6:30am - Jango Fett</dateAuthor><br>
+				Most recent post content... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in tellus sem. Mauris convallis dui in urna pellentesque ut varius.
+			    </span>
+			    <span class="thread">
+				<h3 class="postTitle"><a href="#">FIRST</a></h3>
+				<dateAuthor>Last Reply: 2013.04.01<br>12:14pm - Nicholas La Roux</dateAuthor><br>
+				Most recent post content... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in tellus sem. Mauris convallis dui in urna pellentesque ut varius.
+			    </span>
+			</span>
+		</span>
 		
 		<footer>
+		    <br>
+		    <hr>
 			Copyright 2013 MRUS
 		</footer>
 		
