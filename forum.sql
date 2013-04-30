@@ -106,10 +106,10 @@ DROP TABLE IF EXISTS `venus`.`Topics` ;
 
 SHOW WARNINGS;
 CREATE  TABLE IF NOT EXISTS `venus`.`Topics` (
-  `topictID` INT NOT NULL ,
+  `topicID` INT NOT NULL ,
   `forumID` INT NOT NULL ,
   `title` VARCHAR(15) NOT NULL ,
-  PRIMARY KEY (`topictID`) ,
+  PRIMARY KEY (`topicID`) ,
   CONSTRAINT `fk_Topics_Forums1`
     FOREIGN KEY (`forumID` )
     REFERENCES `venus`.`Forums` (`forumID` )
@@ -130,18 +130,18 @@ DROP TABLE IF EXISTS `venus`.`Posts` ;
 SHOW WARNINGS;
 CREATE  TABLE IF NOT EXISTS `venus`.`Posts` (
   `postID` INT NOT NULL ,
-  `Topics_topictID` INT NOT NULL ,
+  `topicID` INT NOT NULL ,
   `message` TEXT NULL ,
   PRIMARY KEY (`postID`) ,
   CONSTRAINT `fk_Posts_Topics1`
-    FOREIGN KEY (`Topics_topictID` )
-    REFERENCES `venus`.`Topics` (`topictID` )
+    FOREIGN KEY (`topicID` )
+    REFERENCES `venus`.`Topics` (`topicID` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
-CREATE INDEX `fk_Posts_Topics1` ON `venus`.`Posts` (`Topics_topictID` ASC) ;
+CREATE INDEX `fk_Posts_Topics1` ON `venus`.`Posts` (`topicID` ASC) ;
 
 SHOW WARNINGS;
 
