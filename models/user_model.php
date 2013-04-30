@@ -1,4 +1,6 @@
 <?php
+include "model.php";
+
 class User_Model extends Model {
     protected static $table = 'Users';
 
@@ -6,7 +8,7 @@ class User_Model extends Model {
     private $passwordHashed = '';
 
     public static function hashPassword($pass) {
-        return $pass
+        return $pass;
     }
 
 }
