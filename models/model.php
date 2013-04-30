@@ -1,5 +1,6 @@
 <?php
 class Model {
+    protected $table = '';
 
     public static function getByID($id) {
     }
