@@ -1,0 +1,123 @@
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  background: #eeeeee;
+ /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #eeeeee 0%, #cccccc 100%);
+ /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#eeeeee), color-stop(100%,#cccccc));
+ /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg,  #eeeeee 0%,#cccccc 100%);
+ /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg,  #eeeeee 0%,#cccccc 100%);
+ /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg,  #eeeeee 0%,#cccccc 100%);
+ /* IE10+ */
+  background: linear-gradient(135deg,  #eeeeee 0%,#cccccc 100%);
+ /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=1 );
+ /* IE6-9 fallback on horizontal gradient */;
+}
+
+a {
+  text-decoration: none;
+  color: #4cacf5;
+}
+
+a:hover {
+  color: #3b64eb;
+}
+
+ul li {
+  display: inline;
+  padding-right: 25px;
+}
+
+ul li:first-child {
+  margin-left: -30px;
+}
+
+h1 {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-weight: normal;
+  margin-bottom: 0px;
+  display: inline;
+}
+
+h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin-bottom: 0px;
+  display: inline;
+}
+
+input {
+  width: 80px;
+  margin-right: 2.5px;
+}
+
+header {
+  overflow: hidden;
+  width: inherit;
+  height: 6.5%;
+  margin-top: 30px;
+}
+
+footer {
+  font-size: 12px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 800px;
+  height: 1000px;
+  overflow: hidden;
+}
+
+.content, footer {
+  margin-left: 10px;
+  margin-top: 0px;
+  clear: both;
+}
+
+.post {
+  height: 200px;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.postTitle {
+  margin-bottom: 0px;
+}
+
+dateAuthor {
+  color: #626464;
+  font-size: 12px;
+}
+
+.left {
+  float: left;
+  width: 525px;
+  margin-right: 25px;
+}
+
+.column.left {
+  margin-top: -20px;
+}
+
+.login {
+  margin-top: 26px;
+}
+
+.right {
+  float: left;
+  width: 250px;
+}
+
+.column.right {
+  text-align: center;
+}
+
+.thread {
+  font-size: 13px;
+}
