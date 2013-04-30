@@ -4,7 +4,5 @@ include "model.php";
 class Category_Model extends Model {
     protected static $table = 'Categories';
     protected static $fields = array();
-
-    protected $id = 0;
 }
 ?>

@@ -3,8 +3,12 @@ include "model.php";
 
 class Audit_Model extends Model {
     protected static $table = 'Audits';
-    protected static $fields = array();
+    protected static $fields = array('id', 'userID', 'referencedTable', 'occurred', 'primaryKeyOfTable');
 
-    protected $id = 0;
+    private $userID = 0;
+    private $referencedTable = '';
+    private $data = '';
+    private $occurred = Date;
+    private $primaryKeyOfTable = 0;
 }
 ?>
