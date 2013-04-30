@@ -4,8 +4,9 @@ class User_Model extends Model {
     private $username = '';
     private $passwordHashed = '';
 
-    function hashPassword($pass) {
+    public static function hashPassword($pass) {
         return $pass
     }
+
 }
 ?>
