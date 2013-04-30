@@ -2,6 +2,8 @@
 class Model {
     protected static $table = '';
 
+    protected $id = 0;
+
     protected static function getByID($id) {
         $this->getBy(
             array('id' => $id),
