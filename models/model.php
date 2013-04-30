@@ -28,7 +28,7 @@ class Model {
             array('id' => $id),
             $arr_fields_update,
             $limit=1
-        )
+        );
     }
 
     // Destroy
