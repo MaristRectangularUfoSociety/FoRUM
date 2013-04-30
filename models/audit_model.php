@@ -3,7 +3,7 @@ include "model.php";
 
 class Audit_Model extends Model {
     protected static $table = 'Audits';
-    protected static $fields = array('id', 'userID', 'referencedTable', 'occurred', 'primaryKeyOfTable');
+    protected static $fields = array('auditID', 'userID', 'referencedTable', 'occurred', 'primaryKeyOfTable');
 
     private $userID = 0;
     private $referencedTable = '';
