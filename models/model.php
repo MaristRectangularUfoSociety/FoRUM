@@ -1,6 +1,7 @@
 <?php
 class Model {
     protected static $table = '';
+    protected static $fields = array();
 
     protected $id = 0;
 
