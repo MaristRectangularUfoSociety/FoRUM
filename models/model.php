@@ -4,6 +4,22 @@ class Model {
 
     protected $id = 0;
 
+    public function save() {
+        $return = '';
+        $myFieldsToSave = array();
+
+        foreach ($fields as $field) {
+            $myFieldsToSave[$field] = $this->{$field};
+        }
+        if ($this->id) {
+            $return = $this->updateByID($this->id, $myFieldsToSave);
+        } else {
+            $return = $this->create($myFieldsToSave);
+        }
+
+        return $return;
+    }
+
     // Create
     protected static function create($arr_fields) {
     }
