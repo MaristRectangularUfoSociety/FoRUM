@@ -34,9 +34,7 @@ Post.php
 	Delete function?
 	Search function?
 
-
-for all contollers (Get and Post methods)
-
+for all create functions of controllers (Get and Post methods)
 
 Views:
 Index
@@ -72,8 +70,6 @@ Forum
 		|> name
 	$author
 	
-
-
 	  Forum_List
 	$forum
 		|> topics
