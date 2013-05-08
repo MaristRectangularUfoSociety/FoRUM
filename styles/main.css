@@ -74,6 +74,12 @@ footer {
   	margin-right: 25px;
 }
 
+.leftBody {
+  	float: left;
+  	width: 425px;
+  	margin-right: 25px;
+}
+
 .column.left {
   	margin-top: -20px;
 }
@@ -116,6 +122,13 @@ footer {
 
 .desc {
 	font-size: 1em;
+}
+
+.hrBody {
+	color: #cfcfcf;
+	background-color: #cfcfcf;
+	height:1px;
+	border:none;
 }
 
 /*
