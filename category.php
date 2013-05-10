@@ -1,13 +1,22 @@
 <?php
-class users{
-
-	function List{
-
-
+class Category{
+//done(ish)
+	function list{
+		$forum = getmealltheusers;
+		$data = array('forum'=> $forum);
+		loadview(nameofnicksview,$data);
 	}
 
-	function Create{
+	function create{
+		if(get){
+			loadview(nameofnicksview, array());
+		}
+		elseif(post){
+			$category = $_POST['name']
 
+			travis.createthisuser($category);
+			index.index();
+		}
 
 
 	}

@@ -1,19 +1,24 @@
 <?php
-class users{
-
-	function List{
-
-
+class Users{
+//done(ish)
+	function list{
+		$users = getmealltheusers;
+		$data = array('users'=> $users);
+		loadview(nameofnicksview,$data);
 	}
 
-	function Get{
+	function create{
+		if(get){
+			loadview(Register.php, array());
+		}
+		elseif(post){
+			$user = $_POST['username']
+			$user = $_POST['email']
+			$user = $_POST['password']
 
-
-
-	}
-
-	function Register{
-
+			travis.createthisuser($user);
+			index.index();
+		}
 
 
 	}

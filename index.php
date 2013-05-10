@@ -1,11 +1,17 @@
 <?php
-class index{
-	 
-	 $catagory = array();
-	function List:
-		foreach($catagory as $cat){
-			echo <p>$cat</p>;
-		}	
+class Index{
+	 //done(ish)
+	function list {
+		$categories = travis->getMeAllTheCategories();
+
+		$data = array(
+			'categories' => $categories
+			);
+
+		loadView('nicksViewThatIWantToLoad', $categories);
+
+	}
+			
 
 }
 ?>
