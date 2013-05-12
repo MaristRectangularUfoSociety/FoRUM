@@ -40,17 +40,15 @@ session_start();
 				<br>
 			    <h3 class="cat"><a href="#">Registration</a></h3><br>
 					<div class="push-right">
-						<form>
+						<form action="../regUser.php" method="POST/">
 							Please fill out the fields below<br><br>
 							Username (will be displayed on posts)<br>
-							<input placeholder="username"></input><br><br>
-							Email Address<br>
-							<input placeholder="email"></input><br><br>
+							<input type="text" name="usernmame" placeholder="username"></input><br><br>
 							Password<br>
-							<input type="password" placeholder="password"></input><br><br>
+							<input type="password" name="passwordHashed" placeholder="password"></input><br><br>
 							Confirm Password<br>
 							<input type="password" placeholder="confirm"></input><br><br>
-							<button>Submit</button>
+							<input type="submit" />
 						</form>	
 					</div>
 			</span>
