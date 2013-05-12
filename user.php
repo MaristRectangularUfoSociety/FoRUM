@@ -8,10 +8,10 @@ class Users{
 	}
 
 	function create{
-		if(get){
+		if(isset($_GET['var'])){
 			loadview(Register.php, array());
 		}
-		elseif(post){
+		elseif(isset($_POST)){
 			$user = $_POST['username']
 			$user = $_POST['email']
 			$user = $_POST['password']

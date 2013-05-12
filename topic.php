@@ -2,10 +2,10 @@
 class Topic{
 //done(ish)
 	function create{
-		if(get){
+		if(isset($_GET['var'])){
 			loadview(nameofnicksview, array());
 		}
-		elseif(post){
+		elseif(isset($_POST)){
 			$topic = $_POST['catagory']
 			$topic = $_POST['username']
 			$topic = $_POST['text']

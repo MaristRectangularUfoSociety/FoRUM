@@ -8,10 +8,10 @@ class Forum{
 	}
 
 	function create{
-		if(get){
+		if(isset($_GET['var'])){
 			loadview(nameofnicksview, array());
 		}
-		elseif(post){
+		elseif(isset($_POST)){
 			$forum = $_POST['category']
 			$forum = $_POST['name']
 
