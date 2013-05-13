@@ -8,10 +8,10 @@ class Category{
 	}
 
 	function create{
-		if(get){
+		if(isset($_GET['var'])){
 			loadview(nameofnicksview, array());
 		}
-		elseif(post){
+		elseif(isset($_POST)){
 			$category = $_POST['name']
 
 			travis.createthisuser($category);
