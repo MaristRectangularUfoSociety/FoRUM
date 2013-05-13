@@ -28,7 +28,7 @@ session_start();
 				</ul>
 			</span>
 			<span class="right login">
-				<form action="../loginUser.php" method="POST">
+				<form action="../scripts/loginUser.php" method="POST">
 					<input type="text" name="usernmame" placeholder="username"></input>
 					<input type="password" name="password" placeholder="password"></input>
 					<input type="submit" />

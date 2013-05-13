@@ -40,7 +40,7 @@ session_start();
 				<br>
 			    <h3 class="cat"><a href="#">Registration</a></h3><br>
 					<div class="push-right">
-						<form action="../regUser.php" method="POST/">
+						<form action="../scripts/regUser.php" method="POST/">
 							Please fill out the fields below<br><br>
 							Username (will be displayed on posts)<br>
 							<input type="text" name="usernmame" placeholder="username"></input><br><br>
