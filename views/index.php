@@ -28,9 +28,11 @@ session_start();
 				</ul>
 			</span>
 			<span class="right login">
-				<input type="text" placeholder="username"></input>
-				<input type="password" placeholder="password"></input>
-				<button>Log In</button>
+				<form action="../loginUser.php" method="POST">
+					<input type="text" name="usernmame" placeholder="username"></input>
+					<input type="password" name="password" placeholder="password"></input>
+					<input type="submit" />
+				</form>
 			</span>
 		</header
 		
