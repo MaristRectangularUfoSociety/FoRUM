@@ -17,6 +17,12 @@ class Model {
         $this->db = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
     }
 
+    protected function query($sql, $parameters) {
+        $statement = $db->prepare($sql);
+        $statement->execute($parameters);
+        return $statement->fetchAll();
+    }
+
 
     public function save() {
         $return = '';
