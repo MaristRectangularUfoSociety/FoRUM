@@ -39,36 +39,21 @@ session_start();
 		<span class="content">
 			<hr>
 			<span class="leftBody">
-				<br>
-			    <h3 class="cat"><a href="#">Category 1</a></h3><br>
-					<div class="push-right">
-						<span class="topic">Forum 1</span><br>
-							<span class="desc">This is description of the forum, limited to about this long... ish.</span><br><hr class="hrBody">
-						<span class="topic">Forum 2</span><br>
-							<span class="desc">This is description of the forum, limited to about this long... ish.</span><br><hr class="hrBody">
-						<span class="topic">Forum 3</span><br>
-							<span class="desc">This is description of the forum, limited to about this long... ish.</span>
-					</div>
-				<br>
-				<h3 class="cat"><a href="#">Category 2</a></h3><br>
-					<div class="push-right">
-						<span class="topic">Forum 1</span><br>
-							<span class="desc">This is description of the forum, limited to about this long... ish.</span><br><hr class="hrBody">
-						<span class="topic">Forum 2</span><br>
-							<span class="desc">This is description of the forum, limited to about this long... ish.</span><br><hr class="hrBody">
-						<span class="topic">Forum 3</span><br>
-							<span class="desc">This is description of the forum, limited to about this long... ish.</span>
-					</div>
-				<br>
-				<h3 class="cat"><a href="#">Category 3</a></h3><br>
-					<div class="push-right">
-						<span class="topic">Forum 1</span><br>
-							<span class="desc">This is description of the forum, limited to about this long... ish.</span><br><hr class="hrBody">
-						<span class="topic">Forum 2</span><br>
-							<span class="desc">This is description of the forum, limited to about this long... ish.</span><br><hr class="hrBody">
-						<span class="topic">Forum 3</span><br>
-							<span class="desc">This is description of the forum, limited to about this long... ish.</span>
-					</div>
+<?php
+                foreach ($categories as $category) {
+?>
+                    <br>
+                    <h3 class="cat"><a href="#"><?= $category->name ?></a></h3><br>
+                        <div class="push-right">
+<?php
+                            foreach ($category->forums as $forum) {
+?>
+                            <span class="topic"><?= $forum->latestTopic->name ?></span><br>
+                                <span class="desc"><?= $forum->description ?></span><br><hr class="hrBody">
+<?php
+                            }
+                }
+?>
 			</span>
 		</span>
 		
