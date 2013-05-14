@@ -1,5 +1,7 @@
 <?php
 class Model {
+    protected $db = null;
+
     protected $table = '';
     protected $fields = array();
 
