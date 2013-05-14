@@ -34,7 +34,7 @@ session_start();
 					<input type="submit" />
 				</form>
 			</span>
-		</header
+		</header>
 		
 		<span class="content">
 			<hr>
