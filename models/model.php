@@ -82,7 +82,7 @@ class Model {
         }
         $sql .= implode(' AND ', $sql_params);
 
-        $this->query($sql, array_values($arr_fields));
+        return $this->query($sql, array_values($arr_fields));
     }
 
     // Update
