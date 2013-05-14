@@ -1,25 +1,18 @@
 <?php
-class Forum{
-//done(ish)
-	function list{
-		$topic = getmealltheusers;
-		$data = array('topic'=> $topic);
-		loadview(nameofnicksview,$data);
-	}
+class Forum extends Controller{
 
-	function create{
-		if(isset($_GET['var'])){
-			loadview(nameofnicksview, array());
-		}
-		elseif(isset($_POST)){
-			$forum = $_POST['category']
-			$forum = $_POST['name']
-
-			travis.createthisuser($forum);
-			index.index();
-		}
-
-
+	function create() {
+	    if (!empty($_POST)) {
+			$this->forum_model->create(
+			    array(
+			        'category' => $_POST['category'],
+			        'name' => $_POST['name']
+			    )
+			);
+	    }
+	    else {
+	        $this->loadView('create_forum', array());
+	    }
 	}
 }
 ?>
