@@ -1,4 +1,3 @@
-Halo
 <?php
 // SETUP
 // 'controller.php' MUST be first!
