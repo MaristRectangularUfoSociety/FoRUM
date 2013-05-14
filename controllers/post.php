@@ -1,3 +1,4 @@
+<?php
 class Post extends Controller {
     function create() {
         if (!empty($_POST)) {
