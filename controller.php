@@ -1,5 +1,5 @@
 <?php
-include 'models/all_models.php';
+include_once 'models/all_models.php';
 
 class Controller {
     private $name = '';
