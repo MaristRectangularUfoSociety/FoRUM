@@ -9,4 +9,6 @@ class Audit_Model extends Model {
     private $occurred = Date;
     private $primaryKeyOfTable = 0;
 }
+// We are suppressing an error with "Date" module
+@$audit_model = new Audit_Model();
 ?>
