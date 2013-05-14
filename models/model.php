@@ -43,6 +43,18 @@ class Model {
 
     // Create
     protected static function create($arr_fields) {
+        // PHP's associative arrays are guaranteed to produce the same order each call
+
+        // Create a comma-separated list of field names
+        $fieldsStr = implode(',', array_keys($arr_fields));
+
+        // Creates an array of '?' for filling in our prepare-query
+        $questions = array_fill(0, array_len($arr_fields), '?');
+        $questionStr = implode(',', $questions);
+
+        $sql = "INSERT INTO $this->table ($fieldsStr) VALUES ($questionStr)";
+        return $this->query($sql, array_values($arr_fields));
+
     }
 
     // Read
