@@ -25,7 +25,7 @@ else {
 
     switch($page) {
         default:
-            $index = new Index('index');
+            $index = new Index();
             $index->loadIndex();
             break;
     }
