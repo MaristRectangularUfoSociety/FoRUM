@@ -125,6 +125,17 @@ class Model {
     }
 
     protected static function deleteBy($arr_fields, $limit=0) {
+        $sql_params = array();
+        $sql = "DELETE FROM $this->table ";
+        if (!empty($arr_fields)) {
+            $sql .= 'WHERE ';
+            foreach ($field in array_keys($arr_fields)) {
+                $sql_params[] = "$field = ?";
+            }
+        }
+        $sql .= implode(' AND ', $sql_params);
+
+        return $this->query($sql, array_values($arr_fields));
     }
 
 }
