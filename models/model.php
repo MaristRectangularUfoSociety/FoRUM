@@ -100,7 +100,6 @@ class Model {
                 $sql_params[] = "$field = ?";
             }
         }
-        }
         $sql .= implode(',', $sql_update_params);
         $sql .= ' WHERE ';
         $sql .= implode(' AND ', $sql_params);
