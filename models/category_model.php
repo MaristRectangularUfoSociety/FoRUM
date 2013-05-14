@@ -3,7 +3,11 @@ class Category_Model extends Model {
     public function __construct() {
         parent::__construct();
         $this->table = 'Categories';
-        $this->fields = array('categoryID', 'name', 'order');
+        $this->fields = array('name', 'order');
+
+        $this->categoryID = 0;
+        $this->name = '';
+        $this->order = 1;
     }
 }
 

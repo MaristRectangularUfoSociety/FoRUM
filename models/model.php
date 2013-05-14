@@ -22,14 +22,19 @@ class Model {
     protected function query($sql, $parameters) {
         $statement = $this->db->prepare($sql);
         $statement->execute($parameters);
-        return $statement->fetchAll();
+        $return = $statement->fetchAll();
+
+        print_r($sql);
+        print_r($parameters);
+        print_r($return);
+        return $return;
     }
 
     public function save() {
         $return = '';
         $myFieldsToSave = array();
 
-        foreach ($fields as $field) {
+        foreach ($this->fields as $field) {
             $myFieldsToSave[$field] = $this->{$field};
         }
         if ($this->id) {
@@ -42,14 +47,14 @@ class Model {
     }
 
     // Create
-    protected static function create($arr_fields) {
+    protected function create($arr_fields) {
         // PHP's associative arrays are guaranteed to produce the same order each call
 
         // Create a comma-separated list of field names
         $fieldsStr = implode(',', array_keys($arr_fields));
 
         // Creates an array of '?' for filling in our prepare-query
-        $questions = array_fill(0, array_len($arr_fields), '?');
+        $questions = array_fill(0, count($arr_fields), '?');
         $questionStr = implode(',', $questions);
 
         $sql = "INSERT INTO $this->table ($fieldsStr) VALUES ($questionStr)";

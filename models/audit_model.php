@@ -11,7 +11,7 @@ class Audit_Model extends Model {
         parent::__construct();
 
         $this->table = 'Audits';
-        $this->fields = array('auditID', 'userID', 'referencedTable', 'occurred', 'primaryKeyOfTable');
+        $this->fields = array('userID', 'referencedTable', 'occurred', 'primaryKeyOfTable');
         $this->userID = $userID;
         $this->referencedTable = $referencedTable;
         $this->data = $data;
