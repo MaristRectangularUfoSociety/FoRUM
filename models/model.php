@@ -23,7 +23,6 @@ class Model {
         return $statement->fetchAll();
     }
 
-
     public function save() {
         $return = '';
         $myFieldsToSave = array();
@@ -48,8 +47,9 @@ class Model {
 
     public function all() {
         $sql = "SELECT * FROM $this->table";
-        return array();
+        return $this->query($sql, array());
     }
+
     protected static function getByID($id) {
         $this->getBy(
             array('id' => $id),
