@@ -5,6 +5,19 @@ class Model {
 
     protected $id = 0;
 
+    public function __construct() {
+        $theConnectionJSON = getenv("VCAP_SERVICES");
+        $theConnection = json_decode($theConnectionJSON, true);
+
+        $dbname = $theConnection['mysql-5.1'][0]['credentials']['name'];
+        $hostname = $theConnection['mysql-5.1'][0]['credentials']['hostname'];
+        $username = $theConnection['mysql-5.1'][0]['credentials']['username'];
+        $password = $theConnection['mysql-5.1'][0]['credentials']['password'];
+
+        $this->db = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
+    }
+
+
     public function save() {
         $return = '';
         $myFieldsToSave = array();
@@ -26,6 +39,10 @@ class Model {
     }
 
     // Read
+
+    public static function all() {
+        $sql = "SELECT * FROM $this->table";
+    }
     protected static function getByID($id) {
         $this->getBy(
             array('id' => $id),
