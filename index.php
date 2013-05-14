@@ -1,7 +1,8 @@
 <?php
-class Index{
+class Index {
 	 //done(ish)
-	function list {
+	public static function lst() {
+		/*
 		$categories = travis->getMeAllTheCategories();
 
 		$data = array(
@@ -9,9 +10,7 @@ class Index{
 			);
 
 		loadView('nicksViewThatIWantToLoad', $categories);
-
+		*/
 	}
-			
-
 }
 ?>
