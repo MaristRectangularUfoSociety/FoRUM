@@ -1,24 +1,12 @@
 <?php
-class Category{
-//done(ish)
-	function list() {
-		$forum = getmealltheusers;
-		$data = array('forum'=> $forum);
-		loadview(nameofnicksview,$data);
-	}
+class Category extends Controller {
 
-	function create{
-		if(isset($_GET['var'])){
-			loadview(nameofnicksview, array());
+	function create_category() {
+		if (array_key_exists('category_name', $_POST)) {
+		    $this->category_model->create(array('name' => $name));
+		} else {
+		    $this->loadView('create_category', array());
 		}
-		elseif(isset($_POST)){
-			$category = $_POST['name']
-
-			travis.createthisuser($category);
-			index.index();
-		}
-
-
 	}
 }
 ?>
