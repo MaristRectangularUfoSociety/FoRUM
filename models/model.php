@@ -80,7 +80,7 @@ class Model {
                 $sql_params[] = "$field = ?";
             }
         }
-        $sql .= implode(' OR ', $sql_params);
+        $sql .= implode(' AND ', $sql_params);
 
         $this->query($sql, array_values($arr_fields));
     }
