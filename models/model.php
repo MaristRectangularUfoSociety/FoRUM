@@ -76,7 +76,7 @@ class Model {
         $sql = "SELECT * FROM $this->table ";
         if (!empty($arr_fields)) {
             $sql .= 'WHERE ';
-            foreach ($field in array_keys($arr_fields)) {
+            foreach (array_keys($arr_fields) as $field) {
                 $sql_params[] = "$field = ?";
             }
         }
@@ -88,15 +88,15 @@ class Model {
     // Update
     protected static function updateBy($arr_fields_matching, $arr_fields_update, $limit=0) {
         $sql_update_params = array();
-        $sql_where_params
+        $sql_where_params = array();
         $sql = "UPDATE $this->table SET ";
 
-        foreach ($field in array_keys($arr_fields_update)) {
+        foreach (array_keys($arr_fields_update) as $field) {
             $sql_update_params[] = "$field = ?";
         }
         if (!empty($arr_fields)) {
             $sql .= 'WHERE ';
-            foreach ($field in array_keys($arr_fields)) {
+            foreach (array_keys($arr_fields) as $field) {
                 $sql_params[] = "$field = ?";
             }
         }
@@ -129,7 +129,7 @@ class Model {
         $sql = "DELETE FROM $this->table ";
         if (!empty($arr_fields)) {
             $sql .= 'WHERE ';
-            foreach ($field in array_keys($arr_fields)) {
+            foreach (array_keys($arr_fields) as $field) {
                 $sql_params[] = "$field = ?";
             }
         }
