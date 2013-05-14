@@ -18,7 +18,7 @@ class Model {
     }
 
     protected function query($sql, $parameters) {
-        $statement = $db->prepare($sql);
+        $statement = $this->db->prepare($sql);
         $statement->execute($parameters);
         return $statement->fetchAll();
     }
