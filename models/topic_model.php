@@ -3,4 +3,6 @@ class Topic_Model extends Model {
     protected static $table = 'Topics';
     protected static $fields = array('topicID', 'forumID', 'title');
 }
+
+$topic_model = new Topic_Model();
 ?>

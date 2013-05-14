@@ -11,4 +11,6 @@ class User_Model extends Model {
     }
 
 }
+
+$user_model = new User_Model();
 ?>
