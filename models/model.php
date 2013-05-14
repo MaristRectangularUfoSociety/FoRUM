@@ -65,13 +65,24 @@ class Model {
     }
 
     protected static function getByID($id) {
-        $this->getBy(
+        return $this->getBy(
             array('id' => $id),
             $limit=1
         );
     }
 
     protected static function getBy($arr_fields, $limit=0) {
+        $sql_params = array();
+        $sql = "SELECT * FROM $this->table ";
+        if (!empty($arr_fields)) {
+            $sql .= 'WHERE ';
+            foreach ($field in array_keys($arr_fields)) {
+                $sql_params[] = "$field = ?";
+            }
+        }
+        $sql .= implode(' OR ', $sql_params);
+
+        $this->query($sql, array_values($arr_fields));
     }
 
     // Update
