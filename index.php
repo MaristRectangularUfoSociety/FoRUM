@@ -4,14 +4,12 @@ Halo
 // 'controller.php' MUST be first!
 $controllers = array(
     'controller',
-    'index'
-    /*
-    'category.php',
-    'forum.php',
-    'post.php',
-    'topic.php',
-    'user.php'
-    */
+    'index',
+    'category',
+    'forum',
+    'post',
+    'topic',
+    'user'
 );
 
 foreach ($controllers as $controller) {
@@ -20,7 +18,7 @@ foreach ($controllers as $controller) {
 
 // A poor man's routing system
 if (!array_key_exists('page', $_GET)) {
-    $index = new Index('index');
+    $index = new Index();
     $index->loadIndex();
 }
 else {

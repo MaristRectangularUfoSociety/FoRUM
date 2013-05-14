@@ -4,8 +4,7 @@ include_once 'models/all_models.php';
 class Controller {
     private $name = '';
 
-    public function __construct($name) {
-        $this->name = $name;
+    public function __construct() {
         $this->audit_model = new Audit_model();
         $this->category_model = new Category_model();
         $this->forum_model = new Forum_model();
