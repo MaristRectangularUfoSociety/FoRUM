@@ -1,6 +1,4 @@
 <?php
-include "model.php";
-
 class User_Model extends Model {
     protected static $table = 'Users';
     protected static $fields = array();
