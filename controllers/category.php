@@ -1,7 +1,7 @@
 <?php
 class Category{
 //done(ish)
-	function list{
+	function list() {
 		$forum = getmealltheusers;
 		$data = array('forum'=> $forum);
 		loadview(nameofnicksview,$data);

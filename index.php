@@ -1,16 +1,37 @@
+Halo
 <?php
-class Index {
-	 //done(ish)
-	public static function lst() {
-		/*
-		$categories = travis->getMeAllTheCategories();
+// SETUP
+// 'controller.php' MUST be first!
+$controllers = array(
+    'controller',
+    'index'
+    /*
+    'category.php',
+    'forum.php',
+    'post.php',
+    'topic.php',
+    'user.php'
+    */
+);
 
-		$data = array(
-			'categories' => $categories
-			);
+foreach ($controllers as $controller) {
+    include_once ('controllers/' . $controller . '.php');
+}
 
-		loadView('nicksViewThatIWantToLoad', $categories);
-		*/
-	}
+// A poor man's routing system
+if (!array_key_exists('page', $_GET)) {
+    $index = new Index('index');
+    $index->loadIndex();
+}
+else {
+    $page = $_GET['page'];
+
+    switch($page) {
+        default:
+            $index = new Index('index');
+            $index->loadIndex();
+            break;
+    }
+        
 }
 ?>
