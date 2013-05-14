@@ -24,6 +24,9 @@ else {
     $page = $_GET['page'];
 
     switch($page) {
+        case 'create_category':
+            $category = new Category();
+            $category->loadCreateCategory();
         default:
             $index = new Index();
             $index->loadIndex();
