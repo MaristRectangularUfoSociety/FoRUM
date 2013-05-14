@@ -1,7 +1,10 @@
 <?php
 class Topic_Model extends Model {
-    protected static $table = 'Topics';
-    protected static $fields = array('topicID', 'forumID', 'title');
+    public function __construct() {
+        parent::__construct();
+        $this->table = 'Topics';
+        $this->fields = array('topicID', 'forumID', 'title');
+    }
 }
 
 $topic_model = new Topic_Model();

@@ -1,14 +1,24 @@
 <?php
 class Audit_Model extends Model {
-    protected static $table = 'Audits';
-    protected static $fields = array('auditID', 'userID', 'referencedTable', 'occurred', 'primaryKeyOfTable');
 
     private $userID = 0;
     private $referencedTable = '';
     private $data = '';
-    private $occurred = Date;
+    private $occurred = null;
     private $primaryKeyOfTable = 0;
+
+    public function __construct($userID=0, $referencedTable='', $data='', $occurred=null, $primaryKeyOfTable=0) {
+        parent::__construct();
+
+        $this->table = 'Audits';
+        $this->fields = array('auditID', 'userID', 'referencedTable', 'occurred', 'primaryKeyOfTable');
+        $this->userID = $userID;
+        $this->referencedTable = $referencedTable;
+        $this->data = $data;
+        $this->occurred = $occurred;
+        $this->primaryKeyOfTable = $primaryKeyOfTable;
+
+    }
 }
-// We are suppressing an error with "Date" module
-@$audit_model = new Audit_Model();
+$audit_model = new Audit_Model();
 ?>

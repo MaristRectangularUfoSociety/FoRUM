@@ -1,7 +1,7 @@
 <?php
 class Model {
-    protected static $table = '';
-    protected static $fields = array();
+    protected $table = '';
+    protected $fields = array();
 
     protected $id = 0;
 
@@ -40,8 +40,9 @@ class Model {
 
     // Read
 
-    public static function all() {
+    public function all() {
         $sql = "SELECT * FROM $this->table";
+        return array();
     }
     protected static function getByID($id) {
         $this->getBy(
