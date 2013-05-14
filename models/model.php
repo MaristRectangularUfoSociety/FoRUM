@@ -87,6 +87,25 @@ class Model {
 
     // Update
     protected static function updateBy($arr_fields_matching, $arr_fields_update, $limit=0) {
+        $sql_update_params = array();
+        $sql_where_params
+        $sql = "UPDATE $this->table SET ";
+
+        foreach ($field in array_keys($arr_fields_update)) {
+            $sql_update_params[] = "$field = ?";
+        }
+        if (!empty($arr_fields)) {
+            $sql .= 'WHERE ';
+            foreach ($field in array_keys($arr_fields)) {
+                $sql_params[] = "$field = ?";
+            }
+        }
+        }
+        $sql .= implode(',', $sql_update_params);
+        $sql .= ' WHERE ';
+        $sql .= implode(' AND ', $sql_params);
+
+        return $this->query($sql, array_merge(array_values($arr_fields_update), array_values($arr_fields_matching)));
     }
 
     protected static function updateByID($id, $arr_fields_update) {
