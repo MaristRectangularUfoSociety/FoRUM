@@ -11,6 +11,7 @@ class Post extends Controller {
             );
         } else {
             $this->loadView('create_post', array());
+        }
     }
 }
 ?>
