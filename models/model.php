@@ -4,8 +4,7 @@ class Model {
 
     protected $table = '';
     protected $fields = array();
-
-    protected $id = 0;
+    protected $idField = '';
 
     public function __construct() {
         $theConnectionJSON = getenv("VCAP_SERVICES");
@@ -30,13 +29,14 @@ class Model {
 
     public function save() {
         $return = '';
+        $id = $this->getID();
         $myFieldsToSave = array();
 
         foreach ($this->fields as $field) {
             $myFieldsToSave[$field] = $this->{$field};
         }
-        if ($this->id) {
-            $return = $this->updateByID($this->id, $myFieldsToSave);
+        if ($id) {
+            $return = $this->updateByID($id, $myFieldsToSave);
         } else {
             $return = $this->create($myFieldsToSave);
         }
@@ -77,7 +77,7 @@ class Model {
 
     protected static function getByID($id) {
         return $this->getBy(
-            array('id' => $id),
+            array($this->idField => $id),
             $limit=1
         );
     }
@@ -120,7 +120,7 @@ class Model {
 
     protected static function updateByID($id, $arr_fields_update) {
         $this->updateBy(
-            array('id' => $id),
+            array($this->idField => $id),
             $arr_fields_update,
             $limit=1
         );
@@ -129,7 +129,7 @@ class Model {
     // Destroy
     protected static function deleteByID($id) {
         $this->deleteBy(
-            array('id' => $id),
+            array($this->idField => $id),
             $limit=1
         );
     }
