@@ -36,9 +36,7 @@ class Category_Model extends Model {
                 )
             );
         }
-        else {
-            return $this->forums;
-        }
+        return $this->forums;
     }
 }
 
