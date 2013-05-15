@@ -19,16 +19,17 @@ class Category_Model extends Model {
         return $this->categoryID;
     }
 
-    public getName() {
+    public function getName() {
         return $this->name;
     }
 
-    public getOrder() {
+    public function getOrder() {
         return $this->order;
     }
 
-    public getForums() {
-        if (empty()) {
+    public function getForums() {
+        if (empty($this->forums)) {
+            $forum_model = new Forum_Model();
             $this->forums = $forum_model->getBy(
                 array(
                     'categoryID' => $this->categoryID

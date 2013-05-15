@@ -75,14 +75,14 @@ class Model {
         return $this->query($sql, array());
     }
 
-    protected static function getByID($id) {
+    protected function getByID($id) {
         return $this->getBy(
             array($this->idField => $id),
             $limit=1
         );
     }
 
-    protected static function getBy($arr_fields, $limit=0) {
+    protected function getBy($arr_fields, $limit=0) {
         $sql_params = array();
         $sql = "SELECT * FROM $this->table ";
         if (!empty($arr_fields)) {
@@ -97,7 +97,7 @@ class Model {
     }
 
     // Update
-    protected static function updateBy($arr_fields_matching, $arr_fields_update, $limit=0) {
+    protected function updateBy($arr_fields_matching, $arr_fields_update, $limit=0) {
         $sql_update_params = array();
         $sql_where_params = array();
         $sql = "UPDATE $this->table SET ";
@@ -118,7 +118,7 @@ class Model {
         return $this->query($sql, array_merge(array_values($arr_fields_update), array_values($arr_fields_matching)));
     }
 
-    protected static function updateByID($id, $arr_fields_update) {
+    protected function updateByID($id, $arr_fields_update) {
         $this->updateBy(
             array($this->idField => $id),
             $arr_fields_update,
@@ -127,14 +127,14 @@ class Model {
     }
 
     // Destroy
-    protected static function deleteByID($id) {
+    protected function deleteByID($id) {
         $this->deleteBy(
             array($this->idField => $id),
             $limit=1
         );
     }
 
-    protected static function deleteBy($arr_fields, $limit=0) {
+    protected function deleteBy($arr_fields, $limit=0) {
         $sql_params = array();
         $sql = "DELETE FROM $this->table ";
         if (!empty($arr_fields)) {
