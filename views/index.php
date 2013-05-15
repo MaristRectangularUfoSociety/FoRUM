@@ -43,13 +43,13 @@ session_start();
                 foreach ($categories as $category) {
 ?>
                     <br>
-                    <h3 class="cat"><a href="#"><?= $category->name ?></a></h3><br>
+                    <h3 class="cat"><a href="#"><?= $category->getName() ?></a></h3><br>
                         <div class="push-right">
 <?php
-                            foreach ($category->forums as $forum) {
+                            foreach ($category->getForums() as $forum) {
 ?>
-                            <span class="topic"><?= $forum->latestTopic->name ?></span><br>
-                                <span class="desc"><?= $forum->description ?></span><br><hr class="hrBody">
+                            <span class="topic"><?= $forum->getLatestTopic()->getName() ?></span><br>
+                                <span class="desc"><?= $forum->getDescription() ?></span><br><hr class="hrBody">
 <?php
                             }
                 }
