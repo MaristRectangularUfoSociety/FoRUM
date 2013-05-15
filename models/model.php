@@ -22,11 +22,9 @@ class Model {
     protected function query($sql, $parameters) {
         $statement = $this->db->prepare($sql);
         $statement->execute($parameters);
-        $return = $statement->fetchAll();
 
-        print_r($sql);
-        print_r($parameters);
-        print_r($return);
+        // return an object of this class, rather than an associative array
+        $return = $statement->fetchAll(PDO::FETCH_CLASS, get_class($this));
         return $return;
     }
 
