@@ -5,18 +5,23 @@
 		<span class="content">
 			<hr>
 			<span class="leftBody">
-				<br>
-			    <h3 class="cat"><a href="#">Category</a></h3><br>
-					<div class="push-right">
-						<span class="topic">Forum 1</span><br>
-							<span class="desc">This is description of the forum, limited to about this long... ish.</span><br><hr class="hrBody">
-						<span class="topic">Forum 2</span><br>
-							<span class="desc">This is description of the forum, limited to about this long... ish.</span><br><hr class="hrBody">
-						<span class="topic">Forum 3</span><br>
-							<span class="desc">This is description of the forum, limited to about this long... ish.</span><br><hr class="hrBody">
-						<span class="topic">Forum 4</span><br>
-							<span class="desc">This is description of the forum, limited to about this long... ish.</span><br><hr class="hrBody">
-					</div>
+				<?php foreach ($categories as $category) { ?>
+                    <br>
+                    <h3 class="cat"><a href="#">
+						<?= $category->getName() ?>
+					</a></h3><br>
+                        <div class="push-right">
+							<?php foreach ($category->getForums() as $forum) { ?>
+                            	<span class="topic">
+									<?= $forum->getLatestTopic()->getName() ?>
+								</span><br>
+                                <span class="desc">
+									<?= $forum->getDescription() ?>
+								</span><br><hr class="hrBody">
+							<?php
+                            }
+                		}
+					?>
 			</span>
 		</span>
 		
