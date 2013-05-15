@@ -2,18 +2,18 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 
-DROP SCHEMA IF EXISTS `venus` ;
-CREATE SCHEMA IF NOT EXISTS `venus` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
+DROP SCHEMA IF EXISTS `d4fd8eb832a57406d9fa57d7a7a85ec0d` ;
+CREATE SCHEMA IF NOT EXISTS `d4fd8eb832a57406d9fa57d7a7a85ec0d` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
 SHOW WARNINGS;
-USE `venus` ;
+USE `d4fd8eb832a57406d9fa57d7a7a85ec0d` ;
 
 -- -----------------------------------------------------
--- Table `venus`.`Users`
+-- Table `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Users`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `venus`.`Users` ;
+DROP TABLE IF EXISTS `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Users` ;
 
 SHOW WARNINGS;
-CREATE  TABLE IF NOT EXISTS `venus`.`Users` (
+CREATE  TABLE IF NOT EXISTS `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Users` (
   `userID` INT NOT NULL ,
   `username` VARCHAR(15) NULL ,
   `password` VARCHAR(20) NOT NULL ,
@@ -21,17 +21,17 @@ CREATE  TABLE IF NOT EXISTS `venus`.`Users` (
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
-CREATE UNIQUE INDEX `username_UNIQUE` ON `venus`.`Users` (`username` ASC) ;
+CREATE UNIQUE INDEX `username_UNIQUE` ON `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Users` (`username` ASC) ;
 
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `venus`.`Audit`
+-- Table `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Audit`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `venus`.`Audit` ;
+DROP TABLE IF EXISTS `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Audit` ;
 
 SHOW WARNINGS;
-CREATE  TABLE IF NOT EXISTS `venus`.`Audit` (
+CREATE  TABLE IF NOT EXISTS `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Audit` (
   `auditID` INT NOT NULL ,
   `userID` INT NOT NULL ,
   `referencedTable` ENUM('Users') NOT NULL ,
@@ -41,23 +41,23 @@ CREATE  TABLE IF NOT EXISTS `venus`.`Audit` (
   PRIMARY KEY (`auditID`) ,
   CONSTRAINT `fk_Audits_Users`
     FOREIGN KEY (`userID` )
-    REFERENCES `venus`.`Users` (`userID` )
+    REFERENCES `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Users` (`userID` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
-CREATE INDEX `fk_Audits_Users` ON `venus`.`Audit` (`userID` ASC) ;
+CREATE INDEX `fk_Audits_Users` ON `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Audit` (`userID` ASC) ;
 
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `venus`.`Categories`
+-- Table `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Categories`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `venus`.`Categories` ;
+DROP TABLE IF EXISTS `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Categories` ;
 
 SHOW WARNINGS;
-CREATE  TABLE IF NOT EXISTS `venus`.`Categories` (
+CREATE  TABLE IF NOT EXISTS `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Categories` (
   `categoryID` INT NOT NULL ,
   `name` VARCHAR(15) NULL ,
   `order` TINYINT UNSIGNED NOT NULL ,
@@ -65,17 +65,17 @@ CREATE  TABLE IF NOT EXISTS `venus`.`Categories` (
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
-CREATE UNIQUE INDEX `name_UNIQUE` ON `venus`.`Categories` (`name` ASC) ;
+CREATE UNIQUE INDEX `name_UNIQUE` ON `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Categories` (`name` ASC) ;
 
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `venus`.`Forums`
+-- Table `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Forums`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `venus`.`Forums` ;
+DROP TABLE IF EXISTS `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Forums` ;
 
 SHOW WARNINGS;
-CREATE  TABLE IF NOT EXISTS `venus`.`Forums` (
+CREATE  TABLE IF NOT EXISTS `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Forums` (
   `forumID` INT NOT NULL ,
   `categoryID` INT NOT NULL ,
   `order` TINYINT NOT NULL ,
@@ -83,65 +83,65 @@ CREATE  TABLE IF NOT EXISTS `venus`.`Forums` (
   PRIMARY KEY (`forumID`) ,
   CONSTRAINT `fk_Forums_Categories1`
     FOREIGN KEY (`categoryID` )
-    REFERENCES `venus`.`Categories` (`categoryID` )
+    REFERENCES `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Categories` (`categoryID` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
-CREATE INDEX `fk_Forums_Categories1` ON `venus`.`Forums` (`categoryID` ASC) ;
+CREATE INDEX `fk_Forums_Categories1` ON `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Forums` (`categoryID` ASC) ;
 
 SHOW WARNINGS;
-CREATE UNIQUE INDEX `uniqueOrderAndCategory` ON `venus`.`Forums` (`categoryID` ASC, `order` ASC) ;
+CREATE UNIQUE INDEX `uniqueOrderAndCategory` ON `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Forums` (`categoryID` ASC, `order` ASC) ;
 
 SHOW WARNINGS;
-CREATE UNIQUE INDEX `uniqueNameandCategory` ON `venus`.`Forums` (`name` ASC, `categoryID` ASC) ;
+CREATE UNIQUE INDEX `uniqueNameandCategory` ON `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Forums` (`name` ASC, `categoryID` ASC) ;
 
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `venus`.`Topics`
+-- Table `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Topics`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `venus`.`Topics` ;
+DROP TABLE IF EXISTS `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Topics` ;
 
 SHOW WARNINGS;
-CREATE  TABLE IF NOT EXISTS `venus`.`Topics` (
+CREATE  TABLE IF NOT EXISTS `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Topics` (
   `topicID` INT NOT NULL ,
   `forumID` INT NOT NULL ,
   `title` VARCHAR(15) NOT NULL ,
   PRIMARY KEY (`topicID`) ,
   CONSTRAINT `fk_Topics_Forums1`
     FOREIGN KEY (`forumID` )
-    REFERENCES `venus`.`Forums` (`forumID` )
+    REFERENCES `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Forums` (`forumID` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
-CREATE INDEX `fk_Topics_Forums1` ON `venus`.`Topics` (`forumID` ASC) ;
+CREATE INDEX `fk_Topics_Forums1` ON `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Topics` (`forumID` ASC) ;
 
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `venus`.`Posts`
+-- Table `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Posts`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `venus`.`Posts` ;
+DROP TABLE IF EXISTS `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Posts` ;
 
 SHOW WARNINGS;
-CREATE  TABLE IF NOT EXISTS `venus`.`Posts` (
+CREATE  TABLE IF NOT EXISTS `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Posts` (
   `postID` INT NOT NULL ,
   `topicID` INT NOT NULL ,
   `message` TEXT NULL ,
   PRIMARY KEY (`postID`) ,
   CONSTRAINT `fk_Posts_Topics1`
     FOREIGN KEY (`topicID` )
-    REFERENCES `venus`.`Topics` (`topicID` )
+    REFERENCES `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Topics` (`topicID` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
-CREATE INDEX `fk_Posts_Topics1` ON `venus`.`Posts` (`topicID` ASC) ;
+CREATE INDEX `fk_Posts_Topics1` ON `d4fd8eb832a57406d9fa57d7a7a85ec0d`.`Posts` (`topicID` ASC) ;
 
 SHOW WARNINGS;
 
