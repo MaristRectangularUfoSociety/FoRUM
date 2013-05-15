@@ -15,18 +15,29 @@ class Category_Model extends Model {
         parent::__construct();
     }
 
-    public function get_id() {
+    public function getID() {
         return $this->categoryID;
     }
 
-    protected static function getBy($arr_fields, $limit=0) {
-        $category = parent::getBy($arr_fields, $limit);
-        $category->forums = $forum_model->getBy(
-            array(
-                'categoryID' => $this->categoryID
-            )
-        );
-        return $category;
+    public getName() {
+        return $this->name;
+    }
+
+    public getOrder() {
+        return $this->order;
+    }
+
+    public getForums() {
+        if (empty()) {
+            $this->forums = $forum_model->getBy(
+                array(
+                    'categoryID' => $this->categoryID
+                )
+            );
+        }
+        else {
+            return $this->forums;
+        }
     }
 }
 
