@@ -15,6 +15,16 @@ class Category_Model extends Model {
         parent::__construct();
     }
 
+    public function save() {
+        if (!$this->order) {
+            $biggestOrder = $this->db->query(
+                "SELECT MAX(`order`) FROM $this->table"
+            );
+            $this->order = $biggestOrder->getOrder() + 1;
+        }
+        parent::save();
+    }
+
     public function getID() {
         return $this->categoryID;
     }
