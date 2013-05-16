@@ -27,6 +27,10 @@ class Model {
         return $return;
     }
 
+    public function getID() {
+        return $this->{$this->idField};
+    }
+
     public function save() {
         $return = '';
         $id = $this->getID();
