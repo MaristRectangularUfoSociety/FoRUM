@@ -11,11 +11,11 @@
 				<form action="../scripts/regUser.php" method="POST/">
 					Please fill out the fields below<br><br>
 					Username (will be displayed on posts)<br>
-					<input type="text" name="usernmame" placeholder="username"></input><br><br>
+					<input type="text" name="username" placeholder="username"></input><br><br>
+					Email<br>
+					<input type="text" name="email" placeholder="email"></input><br><br>
 					Password<br>
-					<input type="password" name="passwordHashed" placeholder="password"></input><br><br>
-					Confirm Password<br>
-					<input type="password" placeholder="confirm"></input><br><br>
+					<input type="password" name="password" 	placeholder="password"></input><br><br>
 					<input type="submit" />
 				</form>	
 			</div>
