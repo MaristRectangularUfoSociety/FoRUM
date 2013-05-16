@@ -19,12 +19,15 @@ class User extends Controller {
 		    $success = $user->login($_POST['username'], $_POST['password']);
 		    if ($success) {
 		        $_SESSION['user'] = serialize($user);
-		    }
-		    else {
+                $index = new Index();
+                $index->loadIndex();
+		    } else {
 		        $this->loadView('invaliduser', array());
 		    }
-
-		}
+		} else {
+            $index = new Index();
+            $index->loadIndex();
+        }
 	}
 	/*
 		We're currently using the logout.php script.
