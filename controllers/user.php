@@ -13,7 +13,7 @@ class User extends Controller {
             $this->loadView('register', array());
         }
     }
-	function loginUser() {
+	function loadLogin() {
 		if (!empty($_POST)) {
 		    $user = new User_Model();
 		    $success = $user->login($_POST['username'], $_POST['password']);

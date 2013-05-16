@@ -38,6 +38,7 @@ else {
 			break;
 			/* Should this load index.php? */
 		case 'login':
+			$user = new User();
 			$user->loadLogin();
 			break;
 			/* Should this load index.php? */
