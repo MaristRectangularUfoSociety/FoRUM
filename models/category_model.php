@@ -25,10 +25,6 @@ class Category_Model extends Model {
         parent::save();
     }
 
-    public function getID() {
-        return $this->categoryID;
-    }
-
     public function getName() {
         return $this->name;
     }
