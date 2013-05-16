@@ -36,8 +36,8 @@ session_start();
 							  </form>';
 					} else {
 					echo '<form action="/index.php?page=login" method="post">
-							  <input type="text" placeholder="username"></input>
-							  <input type="password" placeholder="password"></input>
+							  <input type="text" name="username" placeholder="username"></input>
+							  <input type="password" name="password" placeholder="password"></input>
 							  <input type="submit" value="Login"/>
 						  </form>';
 					}
