@@ -14,10 +14,16 @@ class User extends Controller {
         }
     }
 	function loginUser() {
-		if (!empty($_SESSION['username'])) 
-			and $_POST['username'] == $this->username
-			and $_POST['password'] == $this->password; {
-			$_SESSION['views'] = $_POST['username'];
+		if (!empty($_POST)) {
+		    $user = new User_Model();
+		    $success = $user->login($_POST['username'], $_POST['password']);
+		    if ($success) {
+		        $_SESSION['user'] = serialize($user);
+		    }
+		    else {
+		        $this->loadView('invaliduser', array());
+		    }
+
 		}
 	}
 	/*
