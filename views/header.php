@@ -28,8 +28,17 @@ session_start();
 				</ul>
 			</span>
 			<span class="right login">
-				<input type="text" placeholder="username"></input>
-				<input type="password" placeholder="password"></input>
-				<button>Log In</button>
+				<?php
+					if(isset($_SESSION['username']))
+						echo $_SESSION['username'];
+						echo '<form action="../scripts/logout.php" method="post">
+							  <input type="submit" value="Logout"/>';
+					else
+					echo '<form action="/index.php?page=login" method="post">
+							  <input type="text" placeholder="username"></input>
+							  <input type="password" placeholder="password"></input>
+							  <input type="submit" value="Login"/>
+						  </form>';
+				?>
 			</span>
 		</header
