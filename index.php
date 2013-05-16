@@ -27,7 +27,13 @@ else {
         case 'create_category':
             $category = new Category();
             $category->loadCreateCategory();
+            break;
+        case 'create_forum':
+            $forum = new Forum();
+            $forum->loadCreateForum();
+            break;
         default:
+            print_r("THIS PAGE DOES NOT EXIST $page");
             $index = new Index();
             $index->loadIndex();
             break;
