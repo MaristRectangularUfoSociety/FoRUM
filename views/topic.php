@@ -18,6 +18,15 @@
 							</span>
 							<!--<span class="author">by Tommy Jones</span>-->
 							<br><hr class="hrBody"><br>
+					<?php
+						if(isset($_SESSION['username']))
+							echo $_SESSION['username'];
+							echo 
+					'<form action="/index.php?page=create_category" method="post">
+						<input type="text" name="message">
+						<input type="submit" value="Post"/>
+					</form>';
+					?>
 				</div>
 				<?php
 					}
