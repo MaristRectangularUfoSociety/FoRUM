@@ -36,8 +36,11 @@ else {
 			$user = new User();
 			$user->loadRegisterUser();
 			break;
+			/* Should this load index.php? */
 		case 'login':
 			$user->loadLogin();
+			break;
+			/* Should this load index.php? */
         default:
             print_r("THIS PAGE DOES NOT EXIST $page");
             $index = new Index();
