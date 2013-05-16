@@ -1,14 +1,16 @@
 <?php
 class Forum extends Controller{
 
-	function create() {
+	function loadCreateForum() {
 	    if (!empty($_POST)) {
-			$this->forum_model->create(
-			    array(
-			        'category' => $_POST['category'],
-			        'name' => $_POST['name']
-			    )
-			);
+                $forum = new Forum_Model();
+                $category = new Category_Model();
+
+                $category = $category->getByID($_POST['categoryID']);
+
+                $forum->name = $_POST['name'];
+                $forum->category = $category;
+                $forum->save();
 	    }
 	    else {
 	        $this->loadView('create_forum', array());
