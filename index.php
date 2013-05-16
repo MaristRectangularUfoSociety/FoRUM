@@ -32,6 +32,12 @@ else {
             $forum = new Forum();
             $forum->loadCreateForum();
             break;
+		case 'register':
+			$user = new User();
+			$user->loadRegisterUser();
+			break;
+		case 'login':
+			$user->loadLogin();
         default:
             print_r("THIS PAGE DOES NOT EXIST $page");
             $index = new Index();
