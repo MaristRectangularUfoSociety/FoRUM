@@ -32,7 +32,8 @@ session_start();
 					if(isset($_SESSION['username']))
 						echo $_SESSION['username'];
 						echo '<form action="../scripts/logout.php" method="post">
-							  <input type="submit" value="Logout"/>';
+							  <input type="submit" value="Logout"/>
+							  </form>';
 					else
 					echo '<form action="/index.php?page=login" method="post">
 							  <input type="text" placeholder="username"></input>
