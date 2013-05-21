@@ -39,7 +39,8 @@ session_start();
 							  <input type="text" name="username" placeholder="username"></input>
 							  <input type="password" name="password" placeholder="password"></input>
 							  <input type="submit" value="Login"/>
-						  </form>';
+						  </form>
+						<br><a href="register.php"><button>Register</button></a>';
 					}
 				?>
 			</span>
