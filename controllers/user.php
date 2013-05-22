@@ -1,18 +1,20 @@
 <?php
 class User extends Controller {
-    function register() {
+    function loadRegisterUser() {
         if (!empty($_POST)) {
-            $this->user_model->create(
-                array(
-                    'username' => $_POST['username'],
-                    'email' => $_POST['email'],
-                    'password' => $_POST['password']
-                )
-            );
+            $user = new User_Model();
+            $user->username = $_POST['username'];
+            $user->password = $User_Model::hashPassword($_POST['password']);
+            $user->save();
+            $_SESSION['user'] = serialize($user);
+
+            $index = new Index();
+            $index->loadIndex();
         } else {
             $this->loadView('register', array());
         }
     }
+
 	function loadLogin() {
 		if (!empty($_POST)) {
 		    $user = new User_Model();
