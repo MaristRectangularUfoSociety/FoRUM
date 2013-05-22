@@ -7,9 +7,9 @@ class Category_Model extends Model {
 
     protected $table = 'Categories';
     protected $fields = array('name', 'order');
-    protected $fieldID = 'categoryID';
+    protected $idField = 'categoryID';
 
-    private $categoryID = 0;
+    protected $categoryID = 0;
 
     function __construct() {
         parent::__construct();
