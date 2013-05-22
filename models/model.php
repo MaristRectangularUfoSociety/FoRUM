@@ -43,9 +43,9 @@ class Model {
             $return = $this->updateByID($id, $myFieldsToSave);
         } else {
             $return = $this->create($myFieldsToSave);
+            $this->{$this->idField} = $return;
         }
-
-        return $return;
+        return true;
     }
 
     // Create
@@ -68,7 +68,9 @@ class Model {
         $questionStr = implode(', ', $questions);
 
         $sql = "INSERT INTO $this->table ($fieldsStr) VALUES ($questionStr)";
-        return $this->query($sql, array_values($fields));
+        $return = $this->query($sql, array_values($fields));
+
+        return $this->db->lastInsertId();
 
     }
 
