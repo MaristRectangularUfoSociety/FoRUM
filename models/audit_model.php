@@ -24,6 +24,13 @@ class Audit_Model extends Model {
         */
 
     }
+
+    public function search($params) {
+        return $this->query(
+            "SELECT * FROM Audits WHERE MATCH (`data`) AGAINST ?",
+            array($params)
+        );
+    }
 }
 $audit_model = new Audit_Model();
 ?>

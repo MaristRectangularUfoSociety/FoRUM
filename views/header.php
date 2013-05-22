@@ -19,6 +19,12 @@
 					<li><a href="#">Forum</a></li>
 					<li>|</li>
 					<li><a href="#">Help</a></li>
+					<li>
+					    <form action="/index.php?page=search" method="get">
+                            <input type="text" name="params" placeholder="searchtext"></input>
+                            <input type="submit" value="search"/>
+					    </form>
+					</li>
 				</ul>
 			</span>
 			<span class="right login">

@@ -10,7 +10,8 @@ $controllers = array(
     'forum',
     'post',
     'topic',
-    'user'
+    'user',
+    'search'
 );
 
 foreach ($controllers as $controller) {
@@ -48,6 +49,9 @@ else {
 		    session_destroy();
             header('Location: index.php'); 
 			break;
+		case 'search':
+		    $search = new Search():
+
         default:
             print_r("THIS PAGE DOES NOT EXIST $page");
             $index = new Index();
