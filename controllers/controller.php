@@ -11,6 +11,8 @@ class Controller {
         $this->post_model = new Post_model();
         $this->topic_model = new Topic_model();
         $this->user_model = new User_model();
+
+        session_start();
     }
 
     public function loadView($view_location, $data) {
