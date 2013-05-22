@@ -7,7 +7,8 @@ class User extends Controller {
             $user->username = $_POST['username'];
             $user->password = User_Model::hashPassword($_POST['password']);
             $user->save();
-            $_SESSION['user'] = $user;
+            $_SESSION['userID'] = $user->getID();
+            $_SESSION['username'] = $user->getUsername();
 
             $index = new Index();
             $index->loadIndex();
@@ -21,7 +22,9 @@ class User extends Controller {
 		    $user = new User_Model();
 		    $success = $user->login($_POST['username'], $_POST['password']);
 		    if ($success) {
-		        $_SESSION['user'] = $user;
+		        $_SESSION['userID'] = $user->getID();
+		        // We also set username because our views look for it, rather than the ID
+		        $_SESSION['username'] = $user->getUsername();
                 $index = new Index();
                 $index->loadIndex();
 		    } else {

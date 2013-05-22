@@ -34,10 +34,12 @@ class User_Model extends Model {
             )
         );
 
-        if ($user) {
-            $this->username = $user->getUsername();
-            $this->password = $user->getPassword();
-            $this->userID = $user->getID();
+        if (isset($user[0])) {
+            $user = $user[0];
+
+            $this->username = $user->username;
+            $this->password = $user->password;
+            $this->userID = $user->userID;
 
             return true;
         } else {
