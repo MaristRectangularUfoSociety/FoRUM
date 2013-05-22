@@ -2,11 +2,12 @@
 class User extends Controller {
     function loadRegisterUser() {
         if (!empty($_POST)) {
+
             $user = new User_Model();
             $user->username = $_POST['username'];
-            $user->password = $User_Model::hashPassword($_POST['password']);
+            $user->password = User_Model::hashPassword($_POST['password']);
             $user->save();
-            $_SESSION['user'] = serialize($user);
+            $_SESSION['user'] = $user;
 
             $index = new Index();
             $index->loadIndex();
@@ -20,7 +21,7 @@ class User extends Controller {
 		    $user = new User_Model();
 		    $success = $user->login($_POST['username'], $_POST['password']);
 		    if ($success) {
-		        $_SESSION['user'] = serialize($user);
+		        $_SESSION['user'] = $user;
                 $index = new Index();
                 $index->loadIndex();
 		    } else {
