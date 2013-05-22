@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // SETUP
 // 'controller.php' MUST be first!
 $controllers = array(
