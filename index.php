@@ -44,6 +44,10 @@ else {
 			$user->loadLogin();
 			break;
 			/* Should this load index.php? */
+		case 'logout':
+		    session_destroy();
+            header('Location: index.php'); 
+			break;
         default:
             print_r("THIS PAGE DOES NOT EXIST $page");
             $index = new Index();

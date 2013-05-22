@@ -25,7 +25,7 @@
 				<?php
 					if(isset($_SESSION['username'])) {
 						echo $_SESSION['username'];
-						echo '<form action="../scripts/logout.php" method="post">
+						echo '<form action="/index.php?page=logout" method="post">
 							  <input type="submit" value="Logout"/>
 							  </form>';
 					} else {
